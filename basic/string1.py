@@ -80,8 +80,14 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-  # +++your code here+++
-  return
+    # Form a string from the first 2 chars of b and all the chars in a with an index of 2 or greater.
+    str1 = b[:2] + a[2:]
+    # Form a string from the first 2 chars of a and all the chars in b with an index of 2 or greater.
+    str2 = a[:2] + b[2:]
+    # Concatenate str1 and str2 separated by a whitespace.
+    result = str1 + " " + str2
+    # Return the result string.
+    return result
 
 
 # Provided simple test() function used in main() to print
