@@ -15,9 +15,34 @@
 # add 'ly' instead.
 # If the string length is less than 3, leave it unchanged.
 # Return the resulting string.
-def verbing(s):
-  # +++your code here+++
-  return
+def verbing(s: str) -> str:
+    """
+    Returns the s string with the 'ing' string concatenated to it,
+    If the s string ends in 'ing', the concatenated string will be 'ly' instead.
+    If the length of s is shorter than 3, the function will return s.
+
+    Args:
+        s (str): Received string.
+
+    Returns:
+        str: The resulting string.
+    """
+
+    # If s is shorter than 3 chars return s.
+    if len(s) < 3:
+        return s
+
+    # Save the last three chars of s.
+    str_tail = s[-3:]
+
+    # Add 'ing' to the end of s, unless it already ends in 'ing', in that case add 'ly' to the end of s.
+    if str_tail != 'ing':
+        result = s + 'ing'
+    else:
+        result = s + 'ly'
+
+    # Return the result string.
+    return result
 
 
 # E. not_bad
