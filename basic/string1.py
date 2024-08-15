@@ -52,7 +52,7 @@ def both_ends(s):
 
 # C. fix_start
 # Given a string s, return a string
-# where all occurences of its first char have
+# where all occurrences of its first char have
 # been changed to '*', except do not change
 # the first char itself.
 # e.g. 'babble' yields 'ba**le'
@@ -60,8 +60,16 @@ def both_ends(s):
 # Hint: s.replace(stra, strb) returns a version of string s
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
-  # +++your code here+++
-  return
+    # Save the first char of s.
+    first_char = s[0]
+    # Save the rest of s.
+    msg_tail = s[1:]
+    # Save a version of msg_tail, in which every instance of first_char has been replaced with *.
+    new_msg_tail = msg_tail.replace(first_char, '*')
+    # Concatenate the first_char and new_msg_tail strings.
+    result = first_char + new_msg_tail
+    # Return the result string.
+    return result
 
 
 # D. MixUp
