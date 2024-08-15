@@ -24,8 +24,15 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-  # +++your code here+++
-  return
+    # Turn count into a string and save it as amount_of_donuts.
+    amount_of_donuts = str(count)
+    # If count is equal or greater than 10, save the amount of donuts as "many".
+    if count >= 10:
+        amount_of_donuts = 'many'
+    # Format the output string with the chosen amount of donuts.
+    result_str = f'Number of donuts: {amount_of_donuts}'
+    # Return the output string.
+    return result_str
 
 
 # B. both_ends
