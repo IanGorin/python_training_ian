@@ -8,6 +8,9 @@
 
 # Additional basic string exercises
 
+import math
+
+
 # D. verbing
 # Given a string, if its length is at least 3,
 # add 'ing' to its end.
@@ -89,9 +92,30 @@ def not_bad(s: str) -> str:
 # e.g. 'abcde', the front half is 'abc', the back half 'de'.
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
-def front_back(a, b):
-  # +++your code here+++
-  return
+def front_back(a: str, b: str) -> str:
+    """
+    Receives two strings and splits them in half.
+    Returns a string made of the interpolated halves of both strings:
+    a-front + b-front + a-back + b-back.
+
+    Args:
+        a (str): Received string #1.
+        b (str): Received string #2.
+
+    Returns:
+        str: The resulting string.
+    """
+
+    # Find the middle point of each string (Rounded up)
+    a_middle_point = math.ceil(len(a)/2)
+    b_middle_point = math.ceil(len(b)/2)
+
+    # Create a string made of the interpolated halves of both strings:
+    # a-front + b-front + a-back + b-back.
+    resulting_str = a[:a_middle_point] + b[:b_middle_point] + a[a_middle_point:] + b[b_middle_point:]
+
+    # return the resulting string.
+    return resulting_str
 
 
 # Simple provided test() function used in main() to print
