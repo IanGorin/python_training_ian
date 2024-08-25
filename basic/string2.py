@@ -53,9 +53,33 @@ def verbing(s: str) -> str:
 # Return the resulting string.
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
-def not_bad(s):
-  # +++your code here+++
-  return
+def not_bad(s: str) -> str:
+    """
+    If the s string contains a 'not...bad' expression,
+    this function will replace it with 'good'.
+    Example: 'This dinner is not that bad!' yields: 'This dinner is good!'.
+
+    Args:
+        s (str): Received string.
+
+    Returns:
+        str: The resulting string.
+    """
+
+    # Find the index of the first appearance of the 'not' and 'bad' substrings in s.
+    index_of_not = s.find('not')
+    index_of_bad = s.find('bad')
+
+    # Declare the result string to be equal to s.
+    result_str = s
+
+    # If both substrings exist in s, and 'not' comes before 'bad', replace the expression with 'good'.
+    if index_of_not < index_of_bad and index_of_not != -1:
+        slice_to_replace = s[index_of_not:index_of_bad + len('bad')]
+        result_str = s.replace(slice_to_replace, 'good')
+
+    # return the resulting string.
+    return result_str
 
 
 # F. front_back
